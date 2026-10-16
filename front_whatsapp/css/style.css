@@ -1,0 +1,571 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #d1d7db;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #222;
+}
+
+button,
+input {
+    font-family: inherit;
+    font-size: 15px;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+.container {
+    width: 95%;
+    max-width: 1200px;
+    height: 90vh;
+    min-height: 500px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.escondido {
+    display: none !important;
+}
+
+/* Telas de login e cadastro */
+
+.tela {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    padding: 45px 30px;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.logo h1 {
+    color: #008f69;
+    font-size: 32px;
+}
+
+.tela h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.tela form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tela label {
+    font-size: 14px;
+    color: #444;
+}
+
+.tela input:not([type="checkbox"]) {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.tela input:focus {
+    border-color: #00a884;
+}
+
+.tela button {
+    padding: 13px;
+    border-radius: 5px;
+    background: #00a884;
+    color: white;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.tela button:hover {
+    background: #008f69;
+}
+
+.permanecer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 5px 0;
+}
+
+.tela p {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.tela a {
+    color: #008f69;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Campo de senha e botão do olhinho */
+
+.campoSenha {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.campoSenha input {
+    flex: 1;
+    min-width: 0;
+    padding-right: 45px !important;
+    margin-bottom: 10px;
+}
+
+.botaoOlho {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* Lista de contatos e tela principal */
+
+.chat {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* Lista de contatos */
+
+.barraContatos {
+    width: 35%;
+    min-width: 260px;
+    max-width: 380px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ddd;
+    background: #fff;
+}
+
+.cabecalhoContatos {
+    background: #f0f2f5;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cabecalhoContatos h2 {
+    font-size: 21px;
+    color: #333;
+}
+
+#atualizarContatos {
+    font-size: 25px;
+    background: transparent;
+    color: #008f69;
+    padding: 3px 8px;
+}
+
+#pesquisaContato {
+    margin: 12px;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 8px;
+    background: #f0f2f5;
+    outline: none;
+}
+
+.listaContatos {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.contato {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    text-align: left;
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+.contato:hover {
+    background: #f5f6f6;
+}
+
+.contato.selecionado {
+    background: #e9edef;
+}
+
+.avatarContato {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #00a884;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    flex-shrink: 0;
+}
+
+.dadosContato {
+    overflow: hidden;
+}
+
+.nomeContatoLista {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.telefoneContatoLista {
+    color: #667781;
+    font-size: 13px;
+}
+
+.botaoSair {
+    background: #f0f2f5;
+    color: #555;
+    padding: 14px;
+    border-top: 1px solid #ddd;
+}
+
+.botaoSair:hover {
+    background: #e3e6e8;
+}
+
+/* Área da conversa */
+
+.areaConversa {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    background: #efeae2;
+}
+
+.cabecalhoConversa {
+    min-height: 75px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    background: #f0f2f5;
+    border-bottom: 1px solid #ddd;
+}
+
+.cabecalhoConversa h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.cabecalhoConversa p {
+    font-size: 13px;
+    color: #667781;
+}
+
+.mensagens {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #efeae2;
+}
+
+.mensagemInicial {
+    color: #667781;
+    text-align: center;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.75);
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.balaoMensagem {
+    max-width: 75%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    overflow-wrap: anywhere;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
+}
+
+.mensagemEnviada {
+    align-self: flex-end;
+    background: #d9fdd3;
+}
+
+.mensagemRecebida {
+    align-self: flex-start;
+    background: white;
+}
+
+.textoMensagem {
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: pre-wrap;
+}
+
+.dataMensagem {
+    display: block;
+    text-align: right;
+    margin-top: 5px;
+    color: #667781;
+    font-size: 11px;
+}
+
+.formMensagem {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 15px;
+    background: #f0f2f5;
+}
+
+#textoMensagem {
+    flex: 1;
+    min-width: 0;
+    padding: 13px 16px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    background: white;
+}
+
+#textoMensagem:disabled {
+    background: #e3e6e8;
+    cursor: not-allowed;
+}
+
+#enviarMensagem {
+    padding: 13px 18px;
+    background: #00a884;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+#enviarMensagem:hover:not(:disabled) {
+    background: #008f69;
+}
+
+#enviarMensagem:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Nome do usuário conectado */
+
+.infoUsuario {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+}
+
+.avatarUsuario {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    border-radius: 50%;
+    background: #00a884;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.infoUsuario h2 {
+    font-size: 16px;
+    margin-bottom: 4px;
+    overflow-wrap: anywhere;
+}
+
+.infoUsuario p {
+    font-size: 12px;
+    color: #667781;
+}
+
+/* Ajustes para celular */
+
+@media (max-width: 650px) {
+    .container {
+        width: 100%;
+        height: 100vh;
+        min-height: 0;
+        border-radius: 0;
+    }
+
+    .barraContatos {
+        width: 38%;
+        min-width: 120px;
+    }
+
+    .cabecalhoContatos {
+        padding: 12px 8px;
+    }
+
+    .cabecalhoContatos h2 {
+        font-size: 16px;
+    }
+
+    .contato {
+        padding: 10px 6px;
+        gap: 6px;
+    }
+
+    .avatarContato {
+        width: 32px;
+        height: 32px;
+        font-size: 15px;
+    }
+
+    .nomeContatoLista {
+        font-size: 13px;
+    }
+
+    .telefoneContatoLista {
+        font-size: 11px;
+        overflow-wrap: anywhere;
+    }
+
+    .cabecalhoConversa {
+        padding: 12px;
+    }
+
+    .cabecalhoConversa h2 {
+        font-size: 15px;
+    }
+
+    .mensagens {
+        padding: 10px;
+    }
+
+    .balaoMensagem {
+        max-width: 90%;
+    }
+
+    .formMensagem {
+        gap: 5px;
+        padding: 8px;
+    }
+
+    #textoMensagem {
+        padding: 11px 8px;
+        font-size: 13px;
+    }
+
+    #enviarMensagem {
+        padding: 11px 9px;
+        font-size: 13px;
+    }
+
+    .infoUsuario {
+        gap: 6px;
+    }
+
+    .avatarUsuario {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        font-size: 15px;
+    }
+
+    .infoUsuario h2 {
+        font-size: 13px;
+    }
+
+    .infoUsuario p {
+        font-size: 11px;
+    }
+}
+
+
+
+/* Corrigir o botão de mostrar senha */
+.tela .campoSenha {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.tela .campoSenha input {
+    width: 100%;
+    flex: 1;
+    min-width: 0;
+    margin-bottom: 0;
+    padding-right: 45px;
+    box-sizing: border-box;
+}
+
+.tela .botaoOlho {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    color: #444;
+    border: none;
+    border-radius: 50%;
+    box-shadow: none;
+
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.tela .botaoOlho:hover {
+    background: #eeeeee;
+    transform: translateY(-50%);
+}

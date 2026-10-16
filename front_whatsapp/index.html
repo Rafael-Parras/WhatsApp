@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <main class="container">
+
+        <!-- Tela de login -->
+        <section id="telaLogin" class="tela">
+            <div class="logo">
+                <h1>WhatsApp</h1>
+            </div>
+
+            <h2>Entrar na sua conta</h2>
+
+            <form id="formLogin">
+                <label for="telefoneLogin">Telefone</label>
+                <input
+                    type="text"
+                    id="telefoneLogin"
+                    placeholder="Digite seu telefone"
+                    required
+                >
+
+                <label for="senhaLogin">Senha</label>
+
+    <div class="campoSenha">
+        <input
+            type="password"
+            id="senhaLogin"
+            placeholder="Digite sua senha"
+            required
+        >
+
+    <button
+        type="button"
+        class="botaoOlho"
+        id="mostrarSenha"
+        aria-label="Mostrar senha"
+    >👁️</button>
+</div>
+
+                <label class="permanecer">
+                    <input type="checkbox" id="permanecerConectado">
+                    Permanecer conectado
+                </label>
+
+                <button type="submit">Entrar</button>
+            </form>
+
+            <p>
+                Não tem uma conta?
+                <a href="#" id="mostrarCadastro">Cadastre-se</a>
+            </p>
+        </section>
+
+        <!-- Tela de cadastro -->
+        <section id="telaCadastro" class="tela escondido">
+            <h2>Criar conta</h2>
+
+            <form id="formCadastro">
+                <label for="apelidoCadastro">Nome</label>
+                <input
+                    type="text"
+                    id="apelidoCadastro"
+                    placeholder="Digite seu nome"
+                    required
+                >
+
+                <label for="telefoneCadastro">Telefone</label>
+                <input
+                    type="text"
+                    id="telefoneCadastro"
+                    placeholder="Digite seu telefone"
+                    required
+                >
+
+                <label for="senhaCadastro">Senha</label>
+                <input
+                    type="password"
+                    id="senhaCadastro"
+                    placeholder="Crie uma senha"
+                    required
+                >
+
+                <button type="submit">Cadastrar</button>
+            </form>
+
+            <p>
+                Já tem uma conta?
+                <a href="#" id="voltarLogin">Entrar</a>
+            </p>
+        </section>
+
+        <!-- Tela principal do chat -->
+        <section id="telaChat" class="chat escondido">
+
+            <aside class="barraContatos">
+
+        <header class="cabecalhoContatos">
+    <div class="infoUsuario">
+        <div class="avatarUsuario" id="avatarUsuario">?</div>
+
+        <div>
+            <h2 id="nomeUsuarioLogado">Minha conta</h2>
+            <p>Conectado</p>
+        </div>
+    </div>
+
+    <button
+        type="button"
+        id="atualizarContatos"
+        title="Atualizar contatos"
+    >↻</button>
+        </header>
+
+
+                <input
+                    type="text"
+                    id="pesquisaContato"
+                    placeholder="Pesquisar contato..."
+                >
+
+                <div id="listaContatos" class="listaContatos">
+                    <p>Carregando contatos...</p>
+                </div>
+
+                <button type="button" id="sairConta" class="botaoSair">
+                    Sair da conta
+                </button>
+            </aside>
+
+            <section class="areaConversa">
+
+                <header class="cabecalhoConversa">
+                    <div>
+                        <h2 id="nomeContato">Selecione uma conversa</h2>
+                        <p id="telefoneContato"></p>
+                    </div>
+                </header>
+
+                <div id="mensagens" class="mensagens">
+                    <p class="mensagemInicial">
+                        Selecione um contato para começar a conversar.
+                    </p>
+                </div>
+
+                <form id="formMensagem" class="formMensagem">
+                    <input
+                        type="hidden"
+                        id="telefoneDestino"
+                    >
+
+                    <input
+                        type="text"
+                        id="textoMensagem"
+                        placeholder="Digite uma mensagem..."
+                        autocomplete="off"
+                        disabled
+                    >
+
+                    <button type="submit" id="enviarMensagem" disabled>
+                        Enviar
+                    </button>
+                </form>
+
+            </section>
+        </section>
+
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
